@@ -7,4 +7,4 @@ class CustomUser(AbstractUser):
     # email = models.EmailField()
     # password = models.TextField()
     # is_admin = models.BooleanField(null=True)
-    rating = models.CharField(max_length=10)
+    rating = models.CharField(null=True,max_length=10)

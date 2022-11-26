@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('boards.urls')),
     path('', include('threads.urls')),
     path('', include('posts.urls')),
+    path('', include('users.urls')),
 ]

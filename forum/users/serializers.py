@@ -12,7 +12,8 @@ class UserSerializer(serializers.ModelSerializer):
         password = data.pop('password')
         data['password'] = make_password(password)
         return data
+        # hashes the password
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password', 'is_staff')
+        fields = ('id','username', 'email', 'password', 'is_staff')

@@ -22,7 +22,11 @@ function HomePage(user) {
   },[])
 
   return (
-    <div>HomePage, user:{user.user.username} board: {boards[0].topic}</div>
+    <div>HomePage, user:{user.user.username} board: {boards.map((topic, id) => (
+      <div key={id}>
+        Board Topic: {topic} Board ID: {id}
+      </div>
+    ))}</div>
   )
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import {Link} from 'react-router-dom'
 
 function HomePage(user) {
   const [boards, setBoards] = useState({})
@@ -18,17 +19,28 @@ function HomePage(user) {
   }
 
   useEffect(() => {
-    getBoards()
+   getBoards()
   },[])
 
   return (
-    <div>HomePage, user:{user.user.username} board: {boards.map((topic, id) => (
-      <div key={id}>
-        Board Topic: {topic} Board ID: {id}
+      <div>HomePage, user:{user.user.username} 
+      boards: {boards.map((board) => (
+        <div key={board.id}>
+          board topic: <Link to={`boards/${board.id}`}>{board.topic}</Link> board ID: {board.id}
+          </div>
+      ))} 
       </div>
-    ))}</div>
   )
 }
+
+// {
+//   boards.map((topic) => (
+//     <div>
+//       Board Topic: {topic} Board ID:
+//     </div>
+//   )
+//   )
+// }
 
 
 export default HomePage

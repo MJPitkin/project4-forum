@@ -6,6 +6,9 @@ User = get_user_model()
 
 class Post(models.Model):
         author = models.ForeignKey(User,null=True, on_delete=models.SET_NULL)
+        @property 
+        def authorname(self):
+                return self.author.username
         content = models.TextField()
         thread = models.ForeignKey(Thread,null=True, on_delete=models.CASCADE)
         created_at = models.DateTimeField(auto_now_add=True)

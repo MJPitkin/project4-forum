@@ -3,8 +3,10 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import {Link} from 'react-router-dom'
 
-function HomePage(user) {
-  const [boards, setBoards] = useState({})
+import userService from '../../utils/userService'
+
+function HomePage({user, setUser}) {
+  const [boards, setBoards] = useState([])
   console.log(user);
 
   async function getBoards() {
@@ -13,23 +15,38 @@ function HomePage(user) {
       headers: new Headers({ "Content-Type": "application/json" }),
     })
       .then((res) => {
+        console.log(res);
         if (res.ok) return res.json();
-        throw new Error("Thread retrieve error");
-  }).then ((res) => setBoards(res))
+        throw new Error("board retrieve error");
+  }).then ((thing) => {
+    console.log(thing);
+    setBoards(thing);
+    console.log(boards);
+  })
   }
 
   useEffect(() => {
    getBoards()
+ 
   },[])
 
+  function signout() {
+    setUser({})
+    userService.logout();
+  }
+
   return (
-      <div>HomePage, user:{user.user.username} 
+    
+    <div>
+      {console.log(boards)}
+            <div>HomePage, user:{user.username} <Link to={'login/'}>login</Link> <Link to={'signup/'}>signup</Link> <button onClick={signout}>Logout</button>
       boards: {boards.map((board) => (
         <div key={board.id}>
           board topic: <Link to={`boards/${board.id}`}>{board.topic}</Link> board ID: {board.id}
           </div>
       ))} 
       </div>
+    </div>
   )
 }
 

@@ -8,8 +8,8 @@ class ThreadSerializer(serializers.ModelSerializer):
         # used for getting the board ID from the fetch URL, requires fetch path to be boards/idnumberhere/threads
         board_id = self.context["request"].get_full_path().split("/")[2]
         board = Board.objects.get(pk=board_id)
-        thread = Thread.objects.create(**validated_data, board=board)
+        thread = Thread.objects.create(**validated_data)
         return thread
     class Meta:
         model = Thread
-        fields = ('id','author','board','created_at','title',)
+        fields = ('id','author','authorname','board','created_at','title',)

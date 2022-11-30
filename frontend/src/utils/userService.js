@@ -6,6 +6,18 @@ function setToken(token) {
     }
 }
 
+function getToken() {
+    let token = localStorage.getItem("token");
+    if (token) {
+        const payload = JSON.parse(atob(token.split(".")[1]));
+        if (payload.exp < Date.now() / 1000) {
+            localStorage.removeItem("token");
+            token = null
+        }
+    }
+    return JSON.parse(atob(token.split(".")[1]));
+}
+
 function login(user) {
     return fetch("http://127.0.0.1:8000/login/", {
         method: "POST",
@@ -19,3 +31,16 @@ function login(user) {
         })
         .then(({ token }) => setToken(token));
 }
+
+function logout() {
+    localStorage.removeItem("token")
+}
+
+const exports = {
+    setToken,
+    getToken,
+    login,
+    logout,
+}
+
+export default exports;

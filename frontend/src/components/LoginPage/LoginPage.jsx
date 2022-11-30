@@ -1,9 +1,13 @@
 import React from 'react'
+import { useContext } from 'react'
 import { useState } from 'react'
+// import { UserContext } from '../../App'
+import userService from "../../utils/userService"
+import {useNavigate} from 'react-router-dom'
 
-function LoginPage() {
-
-const [user, setUser] = useState({
+function LoginPage({user, setUser}) {
+  const navigate = useNavigate();
+const [creds, setCreds] = useState({
   username: '',
   password: ''
 })
@@ -16,19 +20,12 @@ function setToken(token) {
   }
 }
 
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
-  return fetch("http://127.0.0.1:8000/login/", {
-    method: "POST",
-    mode: "cors",
-    headers: new Headers({"Content-Type": "application/json"}),
-    body: JSON.stringify(user),
-  })
-  .then((res) => {
-    if (res.ok) return res.json();
-    throw new Error("bad credentials");
-  })
-  .then(({token})=> setToken(token));
+  await userService.login(creds);
+  let freshUser = userService.getToken();
+  setUser(freshUser);
+  navigate("/");
 }
 
   return (
@@ -36,10 +33,10 @@ function handleSubmit(e) {
 
       <form>
         <label> Username
-          <input type="text" value={user.username} onChange={(e) => setUser((oldState) => ({...oldState, username: e.target.value}))} />
+          <input type="text" value={creds.username} onChange={(e) => setCreds((oldState) => ({...oldState, username: e.target.value}))} />
         </label>
         <label> Password
-          <input type="password" value={user.password} onChange={(e) => setUser((oldState) => ({ ...oldState, password: e.target.value }))} />
+          <input type="password" value={creds.password} onChange={(e) => setCreds((oldState) => ({ ...oldState, password: e.target.value }))} />
         </label>
         <button onClick={handleSubmit}>submit</button></form>
     </div>

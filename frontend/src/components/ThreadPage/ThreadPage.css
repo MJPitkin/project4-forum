@@ -16,7 +16,7 @@
     margin: 10px;
     padding: 10px;
     border-radius: 3px;
-    border-style: solid;
+    border: solid 1px;
     border-color: #9999a5;
     text-decoration: none;
     color: #9999a5;
@@ -45,10 +45,10 @@
     background-color:#797985;
     padding: 10px;
     border-radius: 3px;
-    border-style: solid;
+    border: solid 1px;
     border-color: #9999a5;
     margin-top: 10px;
-    color:#303035;
+    color:#202025;
 }
 
 .replyBody {

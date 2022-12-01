@@ -21,7 +21,7 @@
  margin: 10px;
  padding: 10px;
  border-radius: 3px;
- border-style: solid;
+border: solid 1px;
  border-color: #9999a5;
  color: #9999a5;
 }
@@ -32,7 +32,7 @@
     margin: 10px;
     padding: 10px;
     border-radius: 3px;
-    border-style: solid;
+    border: solid 1px;
     border-color: #9999a5;
     text-decoration: none;
     color: #9999a5;

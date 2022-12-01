@@ -28,7 +28,7 @@ async function handleSubmit(e) {
     <div className='signup'><h3>Sign up</h3>
       <form className='signupForm'><label>Username<input type='text' value={details.username} onChange={(e) => setDetails((oldState) => ({ ...oldState, username: e.target.value }))}></input></label>
         <label>Email<input type='email' value={details.email} onChange={(e) => setDetails((oldState) => ({ ...oldState, email: e.target.value }))}></input></label>
-        <label>Password<input type='text' value={details.password} onChange={(e) => setDetails((oldState) => ({ ...oldState, password: e.target.value }))}></input></label>
+        <label>Password<input type='password' value={details.password} onChange={(e) => setDetails((oldState) => ({ ...oldState, password: e.target.value }))}></input></label>
         <button onClick={handleSubmit}>submit</button></form>
     </div>
   )

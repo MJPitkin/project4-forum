@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import './CreateThreadPage.css'
 
 
 function CreateThreadPage(user) {
@@ -29,8 +30,8 @@ function CreateThreadPage(user) {
     }
 
   return (
-    <div>CreateThreadPage
-          <form><label>Post:<input type='text' value={newThread.title} onChange={(e) => setNewThread((oldState) => ({ ...oldState, title: e.target.value }))}></input></label>
+    <div className='createThread'><h3>Start a new thread</h3>
+          <form className='createThreadForm'><label><span>Thread Title:</span><input type='text' value={newThread.title} onChange={(e) => setNewThread((oldState) => ({ ...oldState, title: e.target.value }))}></input></label>
               <button onClick={handleSubmit}>submit</button></form>
     </div>
   )

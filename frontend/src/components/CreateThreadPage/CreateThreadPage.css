@@ -1,0 +1,45 @@
+.createThread {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.createThread h3 {
+    color: #ccccd5;
+}
+
+.createThreadForm {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    align-items: center;
+    color: #ccccd5;
+}
+
+.createThreadForm label {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    width: 100%;
+}
+
+.createThreadForm label input {
+    width: 70%;
+}
+
+.createThreadForm button {
+    margin: 5px;
+    width: 15vw;
+    padding: 5px;
+    background-color: #404045;
+    color: #9999a5;
+    border: 1px;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+.createThreadForm button:hover {
+    background-color: #797985;
+    color: #ccccd5;
+}

@@ -11,6 +11,8 @@ import PostPage from './components/PostPage/PostPage';
 import CreateThreadPage from './components/CreateThreadPage/CreateThreadPage';
 import SignupPage from './components/SignupPage/SignupPage';
 import UserService from './utils/userService';
+import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 
 const UserContext = createContext({ user: {}, setUser: () => { } })
 
@@ -29,6 +31,7 @@ function App() {
     <div className="App">
       {console.log("Or did I")}
       <UserContext.Provider value={value}>
+        <NavBar user={user} setUser={setUser} />
         <Routes>
           <Route path='/login'
             element={<LoginPage user={user} setUser={setUser} />} />
@@ -40,6 +43,7 @@ function App() {
           <Route path='/boards/:boardId/threadform' element={<CreateThreadPage user={user} />} />
           <Route path='/signup' element={<SignupPage />} />
         </Routes>
+        <Footer />
       </UserContext.Provider>
     </div>
   );

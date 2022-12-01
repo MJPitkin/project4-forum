@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import {Link} from 'react-router-dom'
+import './HomePage.css'
 
 import userService from '../../utils/userService'
 
@@ -30,20 +31,14 @@ function HomePage({user, setUser}) {
  
   },[])
 
-  function signout() {
-    setUser({})
-    userService.logout();
-  }
 
   return (
     
-    <div>
+    <div className='homePage'>
       {console.log(boards)}
-            <div>HomePage, user:{user.username} <Link to={'login/'}>login</Link> <Link to={'signup/'}>signup</Link> <button onClick={signout}>Logout</button>
-      boards: {boards.map((board) => (
-        <div key={board.id}>
-          board topic: <Link to={`boards/${board.id}`}>{board.topic}</Link> board ID: {board.id}
-          </div>
+            <div className='boardsList'>
+      {boards.map((board) => (
+          <Link key={board.id} className='boardLink' to={`boards/${board.id}`}>{board.topic}</Link>
       ))} 
       </div>
     </div>

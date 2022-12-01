@@ -1,0 +1,52 @@
+.boardPage {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.boardPage h3 {
+    text-align: center;
+    color: #ccccd5;
+}
+
+.threadList {
+    width: 70vw;
+}
+
+.threadElement {
+ display: flex;
+ justify-content: space-between;
+ background-color: #404045;
+ margin: 10px;
+ padding: 10px;
+ border-radius: 3px;
+ border-style: solid;
+ border-color: #9999a5;
+ color: #9999a5;
+}
+
+.postThreadLink {
+    text-align: center;
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #9999a5;
+    text-decoration: none;
+    color: #9999a5;
+    background-color: #404045;
+    transition: 0.5s;
+}
+
+.postThreadLink:hover {
+    background-color: #797985;
+    color: #ccccd5;
+    width: 175px;
+}
+
+.threadLink {
+    text-decoration: none;
+    color: #9999a5;
+}

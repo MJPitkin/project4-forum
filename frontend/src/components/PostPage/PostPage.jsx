@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import './PostPage.css'
 
 
 function PostPage(user) {
@@ -27,8 +28,8 @@ e.preventDefault();
     navigate(`/boards/${boardId}/threads/${threadId}`);
 }
   return (
-    <div>PostPage
-          <form><label>Post:<textarea value={reply.content} onChange={(e) => setReply((oldState) => ({ ...oldState, content: e.target.value })) }></textarea></label>
+    <div className='reply'><h3>Reply to thread</h3>
+          <form className='replyForm'><label>Reply:<textarea value={reply.content} onChange={(e) => setReply((oldState) => ({ ...oldState, content: e.target.value })) }></textarea></label>
             <button onClick={handleSubmit}>submit</button></form>
     </div>
   )

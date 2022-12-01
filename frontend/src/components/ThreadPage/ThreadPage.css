@@ -1,0 +1,57 @@
+.threadPage {
+    display: flex;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+}
+
+.threadPage h3 {
+    text-align: center;
+    color:#ccccd5;
+}
+
+.postReplyLink {
+    text-align: center;
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #9999a5;
+    text-decoration: none;
+    color: #9999a5;
+    background-color: #404045;
+    transition: 0.5s;
+}
+
+.postReplyLink:hover {
+    background-color: #797985;
+    color: #ccccd5;
+    width: 175px;
+}
+
+.replyList {
+    width: 50vw;
+    background-color: #404045;
+    padding: 10px;
+    border-radius: 3px;
+    color: #9999a5;
+}
+
+.replyElement {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color:#797985;
+    padding: 10px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #9999a5;
+    margin-top: 10px;
+    color:#303035;
+}
+
+.replyBody {
+    width: 70%;
+    text-align: left;
+}

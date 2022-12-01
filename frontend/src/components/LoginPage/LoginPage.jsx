@@ -4,6 +4,7 @@ import { useState } from 'react'
 // import { UserContext } from '../../App'
 import userService from "../../utils/userService"
 import {useNavigate} from 'react-router-dom'
+import './LoginPage.css'
 
 function LoginPage({user, setUser}) {
   const navigate = useNavigate();
@@ -12,13 +13,13 @@ const [creds, setCreds] = useState({
   password: ''
 })
 
-function setToken(token) {
-  if (token) {
-    localStorage.setItem("token", token);
-  } else {
-    localStorage.removeItem("token")
-  }
-}
+// function setToken(token) {
+//   if (token) {
+//     localStorage.setItem("token", token);
+//   } else {
+//     localStorage.removeItem("token")
+//   }
+// }
 
 async function handleSubmit(e) {
   e.preventDefault();
@@ -29,9 +30,9 @@ async function handleSubmit(e) {
 }
 
   return (
-    <div>LoginPage
+    <div className='login'><h3>Login</h3>
 
-      <form>
+      <form className='loginForm'>
         <label> Username
           <input type="text" value={creds.username} onChange={(e) => setCreds((oldState) => ({...oldState, username: e.target.value}))} />
         </label>

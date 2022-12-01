@@ -1,0 +1,45 @@
+.reply {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.reply h3 {
+    color: #ccccd5;
+}
+
+.replyForm {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    align-items: center;
+    color: #ccccd5;
+}
+
+.replyForm label {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    width: 100%;
+}
+
+.replyForm label textarea {
+    width: 70%;
+}
+
+.replyForm button {
+    margin: 5px;
+    width: 15vw;
+    padding: 5px;
+    background-color: #404045;
+    color: #9999a5;
+    border: 1px;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+.replyForm button:hover {
+    background-color: #797985;
+    color: #ccccd5;
+}

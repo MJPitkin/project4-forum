@@ -1,4 +1,4 @@
-# project4-forum
+# Project 4: Wall Scrawl
 
 # Description
 

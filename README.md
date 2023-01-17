@@ -29,6 +29,8 @@ The timeframe for this project was 3 weeks, and I chose to make it a solo projec
 
 # Planning
 
+![wireframe](images/wireframe.png)
+
 The initial plan I had was done in two broad strokes; first a wireframe of the frontend of the website, so I could determine what elements the final product would need to be functional to a user, which was then used to inform some short notes on what properties and models I would need on the backend database to support it. As I had some uncertainties with the technologies being used at this time, I kept my planning lightweight; I anticipated that changes would need to be made during the build process as I got a stronger grasp on Django, thus with my then level of experience it made sense to remain flexible.
 
 

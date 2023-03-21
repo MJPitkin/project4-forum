@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+mypy = "*"
+autopep8 = "*"
+psycopg2-binary = "*"
+django-rest-framework = "*"
+pyjwt = "*"
+django-cors-headers = "*"
+django-environs = "*"
+dj-database-url = "*"
+django-environ = "*"
+django-on-heroku = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

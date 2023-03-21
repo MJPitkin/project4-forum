@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import django_on_heroku
 from pathlib import Path
 from environ import Env
 import dj_database_url
@@ -88,12 +88,12 @@ WSGI_APPLICATION = 'forum.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'project4_forum_2',
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'project4_forum_2',
+    }
     
-        "default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))
+        # "default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))
     
 }
 
@@ -168,3 +168,4 @@ CORS_ALLOW_HEADERS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+django_on_heroku.settings(locals())

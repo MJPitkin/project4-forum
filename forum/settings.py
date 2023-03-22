@@ -169,4 +169,8 @@ CORS_ALLOW_HEADERS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://project4-wallscrawl.herokuapp.com",
+]
 django_on_heroku.settings(locals())

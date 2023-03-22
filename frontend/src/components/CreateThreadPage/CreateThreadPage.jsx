@@ -15,7 +15,7 @@ function CreateThreadPage(user) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        await fetch(`http://127.0.0.1:8000/boards/${boardId}/threads/`, {
+        await fetch(`https://project4-wallscrawl.herokuapp.com/boards/${boardId}/threads/`, {
             method: "POST",
             mode: "cors",
             withCredentials: true,

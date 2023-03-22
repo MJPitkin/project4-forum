@@ -12,7 +12,7 @@ function ThreadPage(user) {
   const [thread, setThread] = useState({})
 
   async function getPosts() {
-    return fetch(`http://127.0.0.1:8000/boards/${boardId}/threads/${threadId}/posts/`, {
+    return fetch(`https://project4-wallscrawl.herokuapp.com/boards/${boardId}/threads/${threadId}/posts/`, {
       method: 'GET',
       headers: new Headers({ 
         "Content-Type": "application/json" 
@@ -30,7 +30,7 @@ function ThreadPage(user) {
   }
 
   async function getThread() {
-    return fetch(`http://127.0.0.1:8000/boards/${boardId}/threads/${threadId}/`, {
+    return fetch(`https://project4-wallscrawl.herokuapp.com/boards/${boardId}/threads/${threadId}/`, {
       method: 'GET',
       headers: new Headers({
         "Content-Type": "application/json"

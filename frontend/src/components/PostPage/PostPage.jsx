@@ -15,7 +15,7 @@ const [reply, setReply] = useState({
 console.log(reply);
 async function handleSubmit(e) {
 e.preventDefault();
-    await fetch(`http://127.0.0.1:8000/boards/${boardId}/threads/${threadId}/posts/`, {
+    await fetch(`https://project4-wallscrawl.herokuapp.com/boards/${boardId}/threads/${threadId}/posts/`, {
         method: "POST",
         mode: "cors",
         withCredentials: true,

@@ -10,7 +10,7 @@ function BoardPage() {
   const [board, setBoard] = useState({})
 
   async function getBoards() {
-    return fetch(`http://127.0.0.1:8000/boards/${boardId}/`, {
+    return fetch(`https://project4-wallscrawl.herokuapp.com/boards/${boardId}/`, {
       method: 'GET',
       headers: new Headers({ "Content-Type": "application/json" }),
     })
@@ -27,7 +27,7 @@ function BoardPage() {
 
 
   async function getThreads() {
-    return fetch(`http://127.0.0.1:8000/boards/${boardId}/threads/`, {
+    return fetch(`https://project4-wallscrawl.herokuapp.com/boards/${boardId}/threads/`, {
       method: 'GET',
       headers: new Headers({ "Content-Type": "application/json" }),
     })

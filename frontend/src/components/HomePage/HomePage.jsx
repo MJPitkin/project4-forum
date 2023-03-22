@@ -11,7 +11,7 @@ function HomePage({user, setUser}) {
   console.log(user);
 
   async function getBoards() {
-    return fetch("http://127.0.0.1:8000/boards/", {
+    return fetch("https://project4-wallscrawl.herokuapp.com/boards/", {
       method: 'GET',
       headers: new Headers({ "Content-Type": "application/json" }),
     })

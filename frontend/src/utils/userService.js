@@ -19,7 +19,7 @@ function getToken() {
 }
 
 function login(user) {
-    return fetch("http://127.0.0.1:8000/login/", {
+    return fetch("https://project4-wallscrawl.herokuapp.com/login/", {
         method: "POST",
         mode: "cors",
         headers: new Headers({ "Content-Type": "application/json" }),

@@ -13,7 +13,7 @@ function SignupPage() {
 
 async function handleSubmit(e) {
   e.preventDefault();
-  await fetch('http://127.0.0.1:8000/signup/', {
+  await fetch('https://project4-wallscrawl.herokuapp.com/signup/', {
     method: "POST",
     mode: "cors",
     headers: new Headers({
